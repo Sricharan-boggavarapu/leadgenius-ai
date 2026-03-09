@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🚀 LeadGenius AI
 
-## Getting Started
+LeadGenius AI is an AI-powered B2B lead discovery and sales outreach assistant that helps users find potential companies and generate personalized cold outreach emails instantly using AI.
 
-First, run the development server:
+🔗 Live Demo:
+https://leadgenius-ai-two.vercel.app/
 
-```bash
+🧠 Problem Statement
+
+Sales teams spend a significant amount of time manually searching for potential leads and writing outreach emails.
+
+LeadGenius AI solves this problem by:
+
+Automatically generating B2B leads based on industry or search queries
+
+Creating personalized sales outreach emails using AI
+
+Providing a simple interface for quick lead discovery
+
+✨ Features
+🔎 AI Lead Discovery
+
+Enter a query like:
+
+AI startups in India
+
+The system generates relevant companies using AI.
+
+📧 AI SDR Email Generator
+
+Generate personalized cold outreach emails for any company.
+
+Example output:
+
+Subject: Helping Locus.sh improve logistics efficiency
+
+Hi Locus.sh Team,
+
+I recently came across Locus.sh and was impressed by the innovative
+AI-driven logistics optimization solutions your team is building.
+⚡ Fast AI Inference
+
+Uses high-speed LLM inference powered by Groq.
+
+🧑‍💻 Simple SaaS Interface
+
+Minimal and clean UI built for quick lead generation.
+
+🏗️ Tech Stack
+
+Frontend
+
+Next.js
+
+Backend
+
+Next.js API Routes
+
+AI
+
+Groq LLM API
+
+Database
+
+Prisma ORM
+
+SQLite
+
+Styling
+
+Tailwind CSS
+
+Deployment
+
+Vercel
+
+⚙️ Installation
+
+Clone the repository:
+
+git clone https://github.com/YOUR_USERNAME/leadgenius-ai.git
+
+Navigate into the project:
+
+cd leadgenius-ai
+
+Install dependencies:
+
+npm install
+🔑 Environment Variables
+
+Create a .env file and add:
+
+GROQ_API_KEY=your_groq_api_key
+DATABASE_URL="file:./dev.db"
+▶️ Run the Project
+
+Start the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
+📂 Project Structure
+leadgenius-ai
+│
+├── app
+│   ├── api
+│   │   ├── leads
+│   │   │    route.ts
+│   │   └── email
+│   │        route.ts
+│   │
+│   └── page.tsx
+│
+├── lib
+│   └── groq.ts
+│
+├── prisma
+│   └── schema.prisma
+│
+├── public
+├── .env
+├── package.json
+🚀 Future Improvements
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Possible improvements:
 
-## Learn More
+Lead scoring (Hot / Warm / Cold leads)
 
-To learn more about Next.js, take a look at the following resources:
+Export leads to CSV
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+CRM integration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+LinkedIn message generator
 
-## Deploy on Vercel
+Company enrichment APIs
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+👨‍💻 Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Sricharan
+
+Built as part of exploring AI-powered SaaS applications and LLM workflows.
+
+⭐ Support
+
+If you like this project, consider giving it a star ⭐ on GitHub.
