@@ -50,19 +50,23 @@ Return ONLY a valid JSON object in this exact format, with no markdown formattin
 
     const parsed = JSON.parse(content);
     
-    // Save to Prisma
+    // Save to Prisma, but catch errors gracefully for Vercel (read-only SQLite)
     const createdLeads = [];
     if (parsed.leads && Array.isArray(parsed.leads)) {
       for (const lead of parsed.leads) {
-        const created = await prisma.lead.create({
-          data: {
-            company: lead.company,
-            website: lead.website,
-            industry: lead.industry || query,
-            score: typeof lead.score === 'number' ? lead.score : (parseInt(lead.score) || null),
-          }
-        });
-        createdLeads.push(created);
+        try {
+          const created = await prisma.lead.create({
+            data: {
+              company: lead.company,
+              website: lead.website,
+              industry: lead.industry || query,
+              score: typeof lead.score === 'number' ? lead.score : (parseInt(lead.score) || null),
+            }
+          });
+          createdLeads.push(created);
+        } catch (dbError) {
+          console.warn("Could not save to DB (likely Vercel read-only SQLite environment):", dbError);
+        }
       }
     }
 
